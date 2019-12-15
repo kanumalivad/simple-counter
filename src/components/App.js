@@ -3,6 +3,8 @@ import './App.css';
 import 'antd/dist/antd.css';
 import { Layout } from 'antd';
 import { Badge, Button, Icon } from 'antd';
+import {increment, decrement} from '../redux/actions/actions';
+import { connect } from 'react-redux';
 
 const Content = Layout.Content;
 const ButtonGroup = Button.Group;
@@ -12,13 +14,13 @@ class App extends Component {
     return (
      <Layout>
        <Content>
-        <Badge count={1} style={{ backgroundColor: '#52c41a',  }} />
+        <Badge count={this.props.count} style={{ backgroundColor: '#52c41a',  }} showZero={true} />
        </Content>
        <ButtonGroup>
-          <Button onClick={this.decline}>
+          <Button onClick={this.props.decrement}>
             <Icon type="minus" />
           </Button>
-          <Button onClick={this.increase}>
+          <Button onClick={this.props.increment}>
             <Icon type="plus" />
           </Button>
         </ButtonGroup>
@@ -27,4 +29,16 @@ class App extends Component {
   }
 }
 
-export default App;
+
+const mapStateToProps = state => {
+  return {
+    count: state.count
+  };
+};
+
+const mapDispatchToProprs = {
+  increment,
+  decrement
+};
+
+export default connect(mapStateToProps, mapDispatchToProprs)(App);

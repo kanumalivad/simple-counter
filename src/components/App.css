@@ -5,5 +5,30 @@
 
 .ant-btn-group{
   background: white;
-  padding-top: 20px;
+  padding-top: 30px;
+}
+
+.ant-badge-count > .ant-scroll-number-only {
+  height: 50px;
+}
+
+.ant-badge-count > .ant-scroll-number-only > p {
+  height: 50px;
+}
+
+.ant-badge > .ant-badge-count {
+  min-width: 50px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 25px;
+  line-height: 50px;
+}
+
+.ant-badge > .ant-badge-multiple-words {
+  padding: 0 16px;
+}
+
+.ant-btn-group > button {
+  height: 45px;
+  font-size: 25px;
 }
